@@ -9,12 +9,11 @@ def freq_nucleotide(seq):
     seq = seq.replace(" ", "").replace("\n", "").replace("\r", "")
 
     #counting number of nucleotides
-    a_count = seq.count('A')
-    t_count = seq.count('T')
-    g_count = seq.count('G')
-    c_count = seq.count('C')
+    print(f'Count A = {seq.count('A')}')
+    print(f'Count T = {seq.count('T')}')
+    print(f'Count G = {seq.count('G')}')
+    print(f'Count C = {seq.count('C')}')
 
-    return a_count, t_count, g_count, c_count
 
 def gc_per(seq):
     ''''GC percent'''
@@ -31,3 +30,11 @@ def gc_per(seq):
     #Calculating GC percent
     percent = round(((g_count + c_count) / total) * 100, 2)
     return percent
+
+# for example take a sequence
+
+seq = 'atgccgatgatcgctaggagctcgctaggctgacgcgctag'
+
+freq_nucleotide(seq)
+
+print(f'GC percent of given sequence is : {gc_per(seq)}')
